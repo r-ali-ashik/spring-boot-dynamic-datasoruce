@@ -22,23 +22,22 @@ Spring 2.0.1 introduced an `AbstractRoutingDataSource` which comes in handy in t
 - We will create the two data source **datasurce1**, **datasoruce2** and one **transactionManager**,  one **entityManagerFactory** manually
 -  application properties will have database related properties for both **datasource**. For example: 
 <pre>
-				spring.datasource.driver-class-name.1=com.mysql.cj.jdbc.Driver  
-				spring.datasource.url.1=jdbc:mysql://localhost:3306/database1  
-				spring.datasource.username.1=root  
-				spring.datasource.password.1=admin  
+		spring.datasource.driver-class-name.1=com.mysql.cj.jdbc.Driver  
+		spring.datasource.url.1=jdbc:mysql://localhost:3306/database1  
+		spring.datasource.username.1=root  
+		spring.datasource.password.1=admin  
 				  
-				  
-				spring.datasource.driver-class-name.2=com.mysql.cj.jdbc.Driver  
-				spring.datasource.url.2=jdbc:mysql://localhost:3306/database2  
-				spring.datasource.username.2=root  
-				spring.datasource.password.2=admin  
+		spring.datasource.driver-class-name.2=com.mysql.cj.jdbc.Driver  
+		spring.datasource.url.2=jdbc:mysql://localhost:3306/database2  
+		spring.datasource.username.2=root  
+		spring.datasource.password.2=admin  
 				 
-				database.hibernate.schema_update = update  
-				database.hibernate.dialect = org.hibernate.dialect.MySQL5Dialect  
-				database.hibernate.show_sql = true  
-				database.hibernate.format_sql = true 
+		database.hibernate.schema_update = update  
+		database.hibernate.dialect = org.hibernate.dialect.MySQL5Dialect  
+		database.hibernate.show_sql = true  
+		database.hibernate.format_sql = true 
 				 
-				server.port=8081
+		server.port=8081
 </pre>
 
 
