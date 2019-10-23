@@ -41,5 +41,4 @@ Spring 2.0.1 introduced an `AbstractRoutingDataSource` which comes in handy in t
 				server.port=8081
 </pre>
 
-## File Structure
-![enter image description here](https://drive.google.com/file/d/12fCmIUeLwwBA3iyUrlMrie8Jc07nYqYf/view)
+
