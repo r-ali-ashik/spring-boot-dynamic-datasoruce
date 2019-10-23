@@ -1,4 +1,4 @@
-# dynamic-datasource!
+# routing-datasource!
 Lest  first start with discussing  one use-case. We might encounter the requirement of changing DATASOURCE dynamically. For example you are writing one kickass RESTful api and  the your clients are your local banks banks. Banks doesn't want to use the database use provide each of the banks want to have their own database integrated with your service. So you have one RESTful api but multiple database. 
 
 You can distinguish requests from banks from data from the request header or from request path information. 
@@ -42,3 +42,4 @@ Spring 2.0.1 introduced an `AbstractRoutingDataSource` which comes in handy in t
 </pre>
 
 ## File Structure
+![enter image description here](https://drive.google.com/file/d/12fCmIUeLwwBA3iyUrlMrie8Jc07nYqYf/view)
