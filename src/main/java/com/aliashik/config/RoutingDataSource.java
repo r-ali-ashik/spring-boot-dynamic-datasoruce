@@ -31,7 +31,4 @@ public class RoutingDataSource extends AbstractRoutingDataSource {
 
         this.setTargetDataSources(dsMap);
     }
-
-
-
 }

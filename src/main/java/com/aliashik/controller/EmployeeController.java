@@ -1,6 +1,8 @@
 package com.aliashik.controller;
 
+import com.aliashik.model.CustomDataSource;
 import com.aliashik.repository.EmployeeRepository;
+import com.aliashik.util.BeanUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -18,6 +20,11 @@ public class EmployeeController {
 
     @GetMapping(value = "/{bank}/employees", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity getEmployees(@PathVariable String bank) {
+
+        BeanUtil.addBean();
+
+        CustomDataSource dataSource = BeanUtil.getBean(CustomDataSource.class);
+        log.info("Custom datasource name: " + dataSource.getDatasourceName());
 
         log.info("api call initiated for bank name: " + bank);
         return ResponseEntity.ok(employeeRepository.findAll());
