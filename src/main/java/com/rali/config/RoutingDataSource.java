@@ -1,5 +1,6 @@
-package com.aliashik.config;
+package com.rali.config;
 
+import com.rali.constant.DataSourceType;
 import org.springframework.jdbc.datasource.lookup.AbstractRoutingDataSource;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;

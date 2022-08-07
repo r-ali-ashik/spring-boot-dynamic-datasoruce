@@ -1,6 +1,6 @@
-package com.aliashik.interceptor;
+package com.rali.interceptor;
 
-import com.aliashik.config.DataSourceType;
+import com.rali.constant.DataSourceType;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
@@ -15,20 +15,18 @@ public class DataSourceInterceptor extends HandlerInterceptorAdapter {
             throws Exception {
 
         String contextPath = request.getServletContext().getContextPath();
-        String prefixPublisher = contextPath + "/bank1";
-        String prefixAdvertiser = contextPath + "/bank2";
+        String prefixBank1 = contextPath + "/bank1";
+        String prefixBank2 = contextPath + "/bank2";
 
 
         String uri = request.getRequestURI();
         System.out.println("URI:" + uri);
 
-        if (uri.startsWith(prefixPublisher)) {
+        if (uri.startsWith(prefixBank1)) {
             request.setAttribute("database", DataSourceType.DB1);
-        } else if (uri.startsWith(prefixAdvertiser)) {
+        } else if (uri.startsWith(prefixBank2)) {
             request.setAttribute("database", DataSourceType.DB2);
         }
         return true;
     }
-
-
 }

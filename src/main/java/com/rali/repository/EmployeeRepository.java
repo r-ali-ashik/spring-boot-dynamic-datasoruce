@@ -1,6 +1,6 @@
-package com.aliashik.repository;
+package com.rali.repository;
 
-import com.aliashik.entity.Employee;
+import com.rali.entity.Employee;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

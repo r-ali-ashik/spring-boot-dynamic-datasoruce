@@ -1,4 +1,4 @@
-package com.aliashik.config;
+package com.rali.config;
 
 import lombok.extern.slf4j.Slf4j;
 import org.hibernate.jpa.HibernatePersistenceProvider;
@@ -32,7 +32,8 @@ public class DataSourceConfig {
         log.info("## Create DataSource from dataSource1 & dataSource2");
 
         RoutingDataSource dataSource = new RoutingDataSource();
-        dataSource.setDefaultTargetDataSource(dataSource2);
+        log.info("setting datasource 1 as default datasource");
+        dataSource.setDefaultTargetDataSource(dataSource1);
         dataSource.initDataSources(dataSource1, dataSource2);
 
         return dataSource;
@@ -82,7 +83,7 @@ public class DataSourceConfig {
         LocalContainerEntityManagerFactoryBean entityManagerFactoryBean = new LocalContainerEntityManagerFactoryBean();
         entityManagerFactoryBean.setDataSource(dataSource);
         entityManagerFactoryBean.setPersistenceProviderClass(HibernatePersistenceProvider.class);
-        entityManagerFactoryBean.setPackagesToScan("com.aliashik.entity");
+        entityManagerFactoryBean.setPackagesToScan("com.rali.entity");
         entityManagerFactoryBean.setJpaProperties(additionalProperties());
         JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
         entityManagerFactoryBean.setJpaVendorAdapter(vendorAdapter);

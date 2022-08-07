@@ -1,4 +1,4 @@
-package com.aliashik.config;
+package com.rali.constant;
 
 public enum  DataSourceType {
     DB1,

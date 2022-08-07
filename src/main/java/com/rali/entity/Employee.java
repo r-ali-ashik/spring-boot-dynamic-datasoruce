@@ -1,4 +1,4 @@
-package com.aliashik.entity;
+package com.rali.entity;
 
 import lombok.Data;
 
@@ -10,7 +10,6 @@ import javax.persistence.Id;
 @Entity
 @Data
 public class Employee {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;

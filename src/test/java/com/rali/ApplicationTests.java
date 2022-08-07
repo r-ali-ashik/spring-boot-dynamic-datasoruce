@@ -1,4 +1,4 @@
-package com.aliashik;
+package com.rali;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
