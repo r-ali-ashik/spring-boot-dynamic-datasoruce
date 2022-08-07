@@ -1,8 +1,10 @@
 # Dynamic-Datasource-Routing!
-Lest  first start with discussing  one use-case. We might encounter the requirement of changing DATASOURCE dynamically. For example you are writing one kickass RESTful api and  the your clients are your local banks banks. Banks doesn't want to use the database use provide each of the banks want to have their own database integrated with your service. So you have one RESTful api but multiple database. 
 
-You can distinguish requests from banks from data from the request header or from request path information. 
-Spring 2.0.1 introduced an `AbstractRoutingDataSource` which comes in handy in this regard. The general idea is that a routing DataSource acts as an intermediary - while the ‘real’ DataSource can be determined dynamically at runtime
+## Use case
+Let's first start by discussing one use case. We might encounter the requirement of changing DATASOURCE dynamically. For example, you are writing one kickass RESTful API and your clients are local bank banks. Banks don't want to use the database; they want to have their own database integrated with your service. So you have one RESTful API but multiple databases.
+
+You can distinguish requests coming from the banks, from the request header or path information.
+Spring 2.0.1 introduced an `AbstractRoutingDataSource` , which is handy in this regard. The general idea is that a routing DataSource acts as an intermediary - while the 'real' DataSource can be determined dynamically at runtime.
 
 ## Technology Used
 - Spring Boot 2.2.0
@@ -10,17 +12,16 @@ Spring 2.0.1 introduced an `AbstractRoutingDataSource` which comes in handy in t
 - Spring Data JPA
 
 ## Objectives
-- We will create two database ( **database1** & **database2**). Each of the database will have one table **TBL_EMPLOYEE**
--  We will expose one **GET** api with path having **/{bank}/employees**.  Path variable **{bank}** will be replaced in run time. Example: 
- -- http://localhost:8080/bank1/employees
- --  http://localhost:8080/bank2/employees
- - If context path starts with **bank1** application will serve data from the **database1**, if it starts with **bank2** then from **database2** and so on.
+ - We will create two database ( **database1** & **database2**). Each of the database will have one table **TBL_EMPLOYEE**
+ - We will expose a **GET** API with a path variable  **/{bank}/employees**. Path variable **{bank}** will be replaced in run time. Example: 
+  -- http://localhost:8080/bank1/employees --  http://localhost:8080/bank2/employees
+ - If the path variable is **bank1** application will serve data from the **database1**, if it is  **bank2** then from **database2** and so on.
 
-## Target Overview
-- We will introduce one interceptor, Which will read the request context decides which database to use
-- We will not let spring boot auto-configuration to come in our way regarding data source configuration. We will disable data-source and transac-manager auto-configuration. 
-- We will create the two data source **datasurce1**, **datasoruce2** and one **transactionManager**,  one **entityManagerFactory** manually
--  application properties will have database related properties for both **datasource**. For example: 
+## How we are going to do it?
+- We will write one interceptor, which will read the path variable, and based on the path variable we will decide which database to use
+- We will not let spring boot auto-configuration come our way to configure the data source. So we will disable the data-source and transaction-manager auto-configuration.
+- We will configure two data source **datasurce1**, **datasoruce2** and one **transactionManager**,  one **entityManagerFactory** manually
+- We will provide the corresponding property in the **application.properties** file to configure both data sources. Properties will look like the following:
 <pre>
 		spring.datasource.driver-class-name.1=com.mysql.cj.jdbc.Driver  
 		spring.datasource.url.1=jdbc:mysql://localhost:3306/database1  
