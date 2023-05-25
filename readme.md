@@ -13,7 +13,8 @@ To differentiate requests coming from different banks, you can utilize informati
 ## Objectives
  - We will create two database ( **database1** & **database2**). Each of the database will have one table **EMPLOYEE**
  - We will expose a **GET** API with a path variable  **/{bank}/employees**. Path variable **{bank}** will be replaced in run time. Example: 
-  -- http://localhost:8080/bank1/employees --  http://localhost:8080/bank2/employees
+  -- `http://localhost:8080/bank1/employees` 
+  -- `http://localhost:8080/bank2/employees`
  - If the path variable is **bank1** application will serve data from the **database1**, if it is  **bank2** then from **database2** and so on.
 
 ## How we are going to do it?
