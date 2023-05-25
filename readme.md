@@ -1,10 +1,9 @@
 # Dynamic-Datasource-Routing!
 
 ## Use case
-Let's first start by discussing one use case. We might encounter the requirement of changing DATASOURCE dynamically. For example, you are writing one kickass RESTful API and your clients are local bank banks. Banks don't want to use the database; they want to have their own database integrated with your service. So you have one RESTful API but multiple databases.
+Let's begin by discussing a specific use case. There may arise a situation where we need to dynamically change the DATASOURCE. For instance, let's say you are developing a highly impressive RESTful API, and your clients are local banks. These banks have a preference for using their own integrated databases instead of the default database used by your service. Consequently, you end up with a RESTful API that needs to handle multiple databases.
 
-You can distinguish requests coming from the banks, from the request header or path information.
-Spring 2.0.1 introduced an `AbstractRoutingDataSource` , which is handy in this regard. The general idea is that a routing DataSource acts as an intermediary - while the 'real' DataSource can be determined dynamically at runtime.
+To differentiate requests coming from different banks, you can utilize information from the request header or path. In Spring 2.0.1, an `AbstractRoutingDataSource` was introduced, which proves to be quite useful in this scenario. The basic concept is that a routing DataSource acts as an intermediary, allowing the determination of the 'real' DataSource dynamically at runtime.
 
 ## Technology Used
 - Spring Boot 2.2.0
